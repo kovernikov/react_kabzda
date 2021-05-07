@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 10fr;
+}
+.btn {
+    margin: 10px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+
+.active {
+    background: green;
+}
+
+.inert {
+    background: red;
+}
+
+.item {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
