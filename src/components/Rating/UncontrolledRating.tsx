@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 type RatingPropsType = {
     // value: 0 | 1 | 2 | 3 | 4 | 5
@@ -11,11 +11,32 @@ export function UncontrolledRating(props: RatingPropsType) {
 
     return (
         <div>
-            <Star selected={bold > 0}/><button onClick={() => {bold ? setBold(0) : setBold(1)}}>1</button>
-            <Star selected={bold > 1}/><button onClick={() => {bold ? setBold(0) : setBold(2)}}>2</button>
-            <Star selected={bold > 2}/><button onClick={() => {bold ? setBold(0) : setBold(3)}}>3</button>
-            <Star selected={bold > 3}/><button onClick={() => {bold ? setBold(0) : setBold(4)}}>4</button>
-            <Star selected={bold > 4}/><button onClick={() => {bold ? setBold(0) : setBold(5)}}>5</button>
+
+            <Star selected={bold > 0}/>
+            <button onClick={() => {
+                bold ? setBold(0) : setBold(1)
+            }}>1
+            </button>
+            <Star selected={bold > 1}/>
+            <button onClick={() => {
+                bold ? setBold(0) : setBold(2)
+            }}>2
+            </button>
+            <Star selected={bold > 2}/>
+            <button onClick={() => {
+                bold ? setBold(0) : setBold(3)
+            }}>3
+            </button>
+            <Star selected={bold > 3}/>
+            <button onClick={() => {
+                bold ? setBold(0) : setBold(4)
+            }}>4
+            </button>
+            <Star selected={bold > 4}/>
+            <button onClick={() => {
+                bold ? setBold(0) : setBold(5)
+            }}>5
+            </button>
 
         </div>
     );
@@ -28,9 +49,6 @@ type StarRatingType = {
 function Star(props: StarRatingType) {
     console.log('Star rendering')
 
-    if (props.selected === true) {
-        return <span><b>star </b></span>
-    } else {
-        return <span>star </span>
-    }
+    return props.selected ? <span> &#9733; </span> : <span> &#9734; </span>
+
 }
