@@ -1,18 +1,49 @@
-import React from 'react';
-import s from './OnOff.module.css'
+import React, { useState } from 'react';
 
-type OnOffProps = {
-    switched: boolean
+type OnOffPropsType = {
+    // switched: boolean
 }
 
-const OnOff = (props: OnOffProps) => {
+function OnOff (props: OnOffPropsType) {
+    console.log('OnOff rendering')
+
+    let [on, setOn] = useState(false)
+
+    console.log('on: ' + on);
+
+    const onStyle = {
+        margin: '10px',
+        padding: '2px',
+        width: '30px',
+        height: '20',
+        border: '1px solid black',
+        display: "inline-block",
+        backgroundColor: on ? 'green' : 'white',
+    }
+    const offStyle = {
+        margin: '10px',
+        padding: '2px',
+        width: '30px',
+        height: '20',
+        border: '1px solid black',
+        display: "inline-block",
+        backgroundColor: on ? 'white' : 'red',
+    }
+const indicatorStyle = {
+        borderRadius: '10px',
+        marginLeft: '5px',
+        width: '10px',
+        height: '10px',
+        border: '1px solid black',
+    display: "inline-block",
+        backgroundColor: on ? 'green' : 'red',
+    }
+
     return (
-        <div className={s.container}>
-            <div className={(props.switched && s.active) + ' ' + s.btn}>ON</div>
-            <div className={(!props.switched && s.inert) + ' ' + s.btn}>OFF</div>
-            <div
-                className={(props.switched && s.active) + ' ' + s.item + ' ' + s.btn + ' ' + (!props.switched && s.inert)}>X
-            </div>
+        <div>
+            <div style={onStyle} onClick={ () => { setOn(true) } }>ON</div>
+            <div style={offStyle} onClick={ () => { setOn(false) } }>OFF</div>
+            <div style={indicatorStyle}></div>
         </div>
     )
 }
