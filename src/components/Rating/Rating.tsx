@@ -32,8 +32,6 @@ type StarRatingType = {
 function Star(props: StarRatingType) {
     console.log('Star rendering')
 
-    return <span onClick={ () => {
-        props.onClick(props.value)
-    }}> {props.selected ? <span>&#9733; </span> : <span>&#9734; </span>} </span>
+    return <span onClick={ () => {props.onClick(props.value)}}> {props.selected ? <span>&#9733; </span> : <span>&#9734; </span>} </span>
 
 }
