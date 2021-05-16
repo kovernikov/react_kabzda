@@ -25,7 +25,7 @@ export function UncontrolledRating(props: RatingPropsType) {
 type StarRatingType = {
     selected: boolean
     value: RatingValueType
-    setValue: () => void
+    setValue: (value: RatingValueType) => void
 }
 
 function Star(props: StarRatingType) {
