@@ -1,26 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import { UncontrolledAccordion } from './components/Accordion/UncontrolledAccordion';
+import {UncontrolledAccordion} from './components/Accordion/UncontrolledAccordion';
 import OnOff from './components/OnOff/OnOff';
-import { UncontrolledRating } from './components/Rating/UncontrolledRating';
+import { Rating } from './components/Rating/Rating';
+import {RatingValueType, UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 
-function App() {
+function App(props: any) {
     console.log('App rendering')
+
+    let [retingValue, setRetingValue] = useState<RatingValueType>(0)
+
     return (
-        <div>
+        <div className={'app'}>
+
+            <Rating value={retingValue} onClick={setRetingValue}/>
+            <Rating value={retingValue} onClick={setRetingValue}/>
+            <Rating value={retingValue} onClick={setRetingValue}/>
+
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
 
-            <UncontrolledRating />
-            <UncontrolledRating />
-            <UncontrolledRating />
 
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
+            <UncontrolledRating value={retingValue}/>
+            <UncontrolledRating value={retingValue}/>
+            <UncontrolledRating value={retingValue}/>
 
             <OnOff />
             <OnOff />
