@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 
-type OnOffPropsType = {
-    value: boolean
-    onClick: (value: boolean) => void
+type PropsType = {
+    onChange: (on: boolean) => void
 }
 
-function UncontrolledOnOff(props: OnOffPropsType) {
+function UncontrolledOnOff(props: PropsType) {
     console.log('OnOff rendering')
 
+    let [on, setOn] = useState(false)
 
-    console.log('on: ' + props.value);
+    console.log('on: ' + on);
 
     const onStyle = {
         margin: '10px',
@@ -18,7 +18,7 @@ function UncontrolledOnOff(props: OnOffPropsType) {
         height: '20',
         border: '1px solid black',
         display: 'inline-block',
-        backgroundColor: props.value ? 'green' : 'white',
+        backgroundColor: on ? 'green' : 'white',
     }
     const offStyle = {
         margin: '10px',
@@ -27,7 +27,7 @@ function UncontrolledOnOff(props: OnOffPropsType) {
         height: '20',
         border: '1px solid black',
         display: 'inline-block',
-        backgroundColor: props.value ? 'white' : 'red',
+        backgroundColor: on ? 'white' : 'red',
     }
     const indicatorStyle = {
         borderRadius: '10px',
@@ -36,18 +36,24 @@ function UncontrolledOnOff(props: OnOffPropsType) {
         height: '10px',
         border: '1px solid black',
         display: 'inline-block',
-        backgroundColor: props.value ? 'green' : 'red',
+        backgroundColor: on ? 'green' : 'red',
+    }
+
+    const onClicked = () => {
+        setOn(true)
+        props.onChange(true)
+
+    }
+    const offClicked = () => {
+        setOn(false)
+        props.onChange(false)
     }
 
     return (
         <div>
-            <div style={onStyle} onClick={() => {
-                props.onClick(true)
-            }}>ON
+            <div style={onStyle} onClick={onClicked}>ON
             </div>
-            <div style={offStyle} onClick={() => {
-                props.onClick(false)
-            }}>OFF
+            <div style={offStyle} onClick={offClicked}>OFF
             </div>
             <div style={indicatorStyle}></div>
         </div>
