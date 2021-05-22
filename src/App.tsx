@@ -4,9 +4,9 @@ import {UncontrolledAccordion} from './components/UncontrolledAccordion/Uncontro
 
 import {Rating} from './components/Rating/Rating';
 import {RatingValueType, UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
-import Accordion from './components/Accordion/Accordion';
+import {Accordion} from './components/Accordion/Accordion';
 import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
-import OnOff from './components/OnOff/OnOff';
+import {OnOff} from './components/OnOff/OnOff';
 
 
 function App(props: any) {
@@ -34,9 +34,9 @@ function App(props: any) {
             <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
             <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
 
-            <OnOff value={switchOn} onClick={ setSwitchOn }/>
-            <OnOff value={switchOn} onClick={ setSwitchOn }/>
-            <OnOff value={switchOn} onClick={ setSwitchOn }/>
+            <OnOff on={switchOn} onChange={ setSwitchOn }/>
+            <OnOff on={switchOn} onChange={ setSwitchOn }/>
+            <OnOff on={switchOn} onChange={ setSwitchOn }/>
 
 
             <Rating value={retingValue} onClick={setRetingValue}/>
