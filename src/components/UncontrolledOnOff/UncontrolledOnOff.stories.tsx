@@ -9,4 +9,5 @@ export default {
 
 const callback = action(' on or off clicked');
 
-export const UncontrolledOnOffMode = () => <UncontrolledOnOff onChange={callback}/>;
+export const UncontrolledOnMode = () => <UncontrolledOnOff defaultOn={true} onChange={callback}/>;
+export const UncontrolledOffMode = () => <UncontrolledOnOff defaultOn={false} onChange={callback}/>;

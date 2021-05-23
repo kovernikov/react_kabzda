@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     titleValue: string
     collapsed : boolean
+    /**
+     * Callback that are showed when is opened.
+     */
     onChange: () => void
+    color?: string
 }
 
 
@@ -13,7 +17,7 @@ export function Accordion(props: AccordionPropsType) {
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue} onChange={props.onChange} />
+            <AccordionTitle title={props.titleValue} color={props.color} onChange={props.onChange} />
             {!props.collapsed && <AccordionBody/>}
         </div>
     )
@@ -22,11 +26,14 @@ export function Accordion(props: AccordionPropsType) {
 type AccordionTitlePropsType = {
     title: string
     onChange: () => void
-}
+    color?: string
+   }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log('AccordionTitle rendering')
-    return <h3 onClick={ (e) => props.onChange()}> ---{props.title}---</h3>
+    return <h3
+        style={{color: props.color ? props.color : "black"}}
+        onClick={ (e) => props.onChange()}> ---{props.title}---</h3>
 }
 
 function AccordionBody() {
