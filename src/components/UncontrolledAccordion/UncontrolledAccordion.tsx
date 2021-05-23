@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 type AccordionPropsType = {
     titleValue: string
     // collapsed : boolean
+    // onChange: () => void
 }
 
 
