@@ -1,6 +1,7 @@
 import React from 'react';
 import {UncontrolledRating} from './UncontrolledRating';
 import {action} from '@storybook/addon-actions';
+import { Story, Meta } from '@storybook/react';
 
 export default {
     title: 'UncontrolledRating',

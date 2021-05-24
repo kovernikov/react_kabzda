@@ -1,5 +1,6 @@
 import React from 'react';
 import {UncontrolledAccordion} from './UncontrolledAccordion';
+import { Story, Meta } from '@storybook/react';
 
 export default {
     title: 'UncontrolledAccordion',

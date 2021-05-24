@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {OnOff} from './OnOff';
 import {action} from '@storybook/addon-actions';
+import { Story, Meta } from '@storybook/react';
 
 export default {
     title: 'OnOff',
