@@ -19,24 +19,28 @@ function App(props: any) {
     return (
         <div className={'app'}>
 
-            <UncontrolledAccordion titleValue={'Menu'} />
-            <UncontrolledAccordion titleValue={'Users'} />
+            <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledAccordion titleValue={'Users'}/>
 
             {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
             {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
             {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
 
 
-            <UncontrolledRating value={retingValue}/>
-            <UncontrolledRating value={retingValue}/>
-            <UncontrolledRating value={retingValue}/>
+            <UncontrolledRating/>
+            <UncontrolledRating/>
+            <UncontrolledRating/>
 
-            <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
-            <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+            <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {
+                setAccordionCollapsed(!accordionCollapsed)
+            }}/>
+            <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {
+                setAccordionCollapsed(!accordionCollapsed)
+            }}/>
 
-            <OnOff on={switchOn} onChange={ setSwitchOn }/>
-            <OnOff on={switchOn} onChange={ setSwitchOn }/>
-            <OnOff on={switchOn} onChange={ setSwitchOn }/>
+            <OnOff on={switchOn} onChange={setSwitchOn}/>
+            <OnOff on={switchOn} onChange={setSwitchOn}/>
+            <OnOff on={switchOn} onChange={setSwitchOn}/>
 
 
             <Rating value={retingValue} onClick={setRetingValue}/>
