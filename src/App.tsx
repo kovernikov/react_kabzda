@@ -31,12 +31,12 @@ function App(props: any) {
             <UncontrolledRating/>
             <UncontrolledRating/>
 
+            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={() => {
+                setAccordionCollapsed(accordionCollapsed)
+            }} items={props.items} onClick={props.onClick}/>
             <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {
                 setAccordionCollapsed(!accordionCollapsed)
-            }}/>
-            <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {
-                setAccordionCollapsed(!accordionCollapsed)
-            }}/>
+            }} items={props.items}onClick={props.onClick}/>
 
             <OnOff on={switchOn} onChange={setSwitchOn}/>
             <OnOff on={switchOn} onChange={setSwitchOn}/>
@@ -56,7 +56,6 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    debugger
     console.log('PageTitle rendering')
     return <h1>{props.title}</h1>
 }
