@@ -39,7 +39,7 @@ export const UserUncollapsedMode = () => <Accordion titleValue={'Users'} collaps
     {title: 'Victor', value: 4}
 ]}/>;
 
-
+// const Users = React.memo(UsersSecret);
 
 export const ModeChanging: Story<AccordionPropsType> = (args) => {
     const [value, setValue] = useState<boolean>(true);

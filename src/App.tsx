@@ -24,27 +24,20 @@ function App(props: any) {
 
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
-
 
             <UncontrolledRating/>
             <UncontrolledRating/>
             <UncontrolledRating/>
 
             <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={() => {
-                setAccordionCollapsed(accordionCollapsed)
+                setAccordionCollapsed(!accordionCollapsed)
             }} items={props.items} onClick={props.onClick}/>
             <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {
                 setAccordionCollapsed(!accordionCollapsed)
             }} items={props.items}onClick={props.onClick}/>
 
             <OnOff on={switchOn} onChange={setSwitchOn}/>
-            <OnOff on={switchOn} onChange={setSwitchOn}/>
-            <OnOff on={switchOn} onChange={setSwitchOn}/>
 
-
-            <Rating value={retingValue} onClick={setRetingValue}/>
-            <Rating value={retingValue} onClick={setRetingValue}/>
             <Rating value={retingValue} onClick={setRetingValue}/>
 
         </div>

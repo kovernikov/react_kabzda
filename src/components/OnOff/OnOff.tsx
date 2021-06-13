@@ -7,8 +7,6 @@ type OnOffPropsType = {
 
 export function OnOff(props: OnOffPropsType) {
     console.log('OnOff rendering')
-
-
     console.log('on: ' + props.on);
 
     const onStyle = {
