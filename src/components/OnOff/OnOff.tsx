@@ -5,7 +5,7 @@ type OnOffPropsType = {
     onChange: (on: boolean) => void
 }
 
-export function OnOff(props: OnOffPropsType) {
+function OnOffComponent(props: OnOffPropsType) {
     console.log('OnOff rendering')
     console.log('on: ' + props.on);
 
@@ -51,3 +51,5 @@ export function OnOff(props: OnOffPropsType) {
         </div>
     )
 }
+
+export const OnOff = React.memo(OnOffComponent)

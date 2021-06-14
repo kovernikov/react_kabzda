@@ -9,7 +9,7 @@ import {OnOff} from './components/OnOff/OnOff';
 import {Select} from './components/Select/Select';
 
 
-function App(props: any) {
+function AppComponent(props: any) {
     console.log('App rendering')
 
     let [retingValue, setRetingValue] = useState<RatingValueType>(0)
@@ -63,4 +63,4 @@ function PageTitle(props: PageTitlePropsType) {
     return <h1>{props.title}</h1>
 }
 
-export default App;
+export const App = React.memo(AppComponent)

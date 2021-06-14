@@ -57,4 +57,4 @@ function AccordionBodySecret(props: AccordionBodyPropsType) {
         </ul>
 
 }
-const AccordionBody = React.memo(AccordionBodySecret);
+export const AccordionBody = React.memo(AccordionBodySecret);
