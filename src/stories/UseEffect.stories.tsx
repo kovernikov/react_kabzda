@@ -49,3 +49,25 @@ export const SetTimeoutExample = () => {
         Hello, counter:{counter} - fake:{fake}
     </>
 }
+export const TimerExample = () => {
+    const [counter, setCounter] = useState<number>(1);
+    const [fake, setFake] = useState<number>(1);
+
+    const today = new Date()
+    const hour = today.setHours(0, 0, 0, 0);
+    const minutes = today.getMinutes()
+    const seconds = today.getSeconds()
+
+   useEffect(() => {
+       setInterval(() => {
+           setCounter(state => state + 1)
+       }, 1000)
+
+   }, [])
+
+    return <>
+        {/*<button onClick={() => setCounter(counter + 1)}>counter+</button>*/}
+        {/*<button onClick={() => setFake(fake + 1)}>fake+</button>*/}
+        Hello, counter:{hour}:0{minutes}:0{seconds}
+    </>
+}
