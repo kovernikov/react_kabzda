@@ -1,0 +1,124 @@
+/*.clock {*/
+/*    width: 120px;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*}*/
+/*.clock .digital-clock {*/
+/*    padding: 10px;*/
+/*}*/
+/*.clock .analog-clock {*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    border: solid 1px #000;*/
+/*    border-radius: 50%;*/
+/*    position: relative;*/
+/*    background: #fff;*/
+/*}*/
+/*.clock .analog-clock .dial {*/
+/*    position: absolute;*/
+/*    left: 50%;*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    transform-origin: bottom left;*/
+/*}*/
+/*.clock .analog-clock .dial.seconds {*/
+/*    border-left: solid 1px green;*/
+/*}*/
+/*.clock .analog-clock .dial.minutes {*/
+/*    border-left: solid 1px #cc0000;*/
+/*}*/
+/*.clock .analog-clock .dial.hours {*/
+/*    width: 35px;*/
+/*    height: 35px;*/
+/*    top: 15px;*/
+/*    border-left: solid 2px #000;*/
+/*}*/
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.clock-container {
+    position: relative;
+    width: 20%;
+    overflow: hidden;
+    background: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.clock-container.styling {
+    box-shadow: 0px 0px 10px #888888;
+    border-radius: 50%;
+    min-width: 100px;
+    margin-top: 1%;
+}
+.clock-container:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.clock-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock-content .background-numbers {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+}
+.clock-content .background-numbers .numbers {
+    fill: grey;
+}
+.clock-content .indicator {
+    border-radius: 10px;
+    transform-origin: bottom;
+    outline: 1px solid transparent;
+    position: absolute;
+    bottom: 50%;
+}
+.clock-content .indicator.seconds-indicator {
+    width: 0.5%;
+    height: 37.5%;
+    z-index: 2;
+    background-color: #dfc48c;
+}
+.clock-content .indicator.minutes-indicator {
+    width: 1%;
+    height: 30%;
+    z-index: 3;
+    background-color: #cd6a51;
+}
+.clock-content .indicator.hours-indicator {
+    width: 1.5%;
+    height: 22.5%;
+    z-index: 4;
+    background-color: #8f9c6c;
+}
+.clock-content .indicator-cover {
+    position: absolute;
+    bottom: 48.5%;
+    /*(50% - (3% /2)) */
+    border-radius: 50%;
+    width: 3%;
+    height: 3%;
+    background-color: lightgrey;
+    z-index: 5;
+}
+
+.digital {
+    margin-top: 50px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
