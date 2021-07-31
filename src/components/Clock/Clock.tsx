@@ -3,7 +3,7 @@ import {DigitalClockView} from './DigitalClockView';
 import {AnalogClockView} from './AnalogClockView';
 
 type PropsType = {
-	mode?: 'digital' | 'analog'
+	mode: 'digital' | 'analog'
 }
 
 export const Clock: React.FC<PropsType> = (props) => {
@@ -15,22 +15,21 @@ export const Clock: React.FC<PropsType> = (props) => {
 		}, 1000);
 
 		return () => {
-			// clearInterval(intervalID)
+			clearInterval(intervalID)
 		}
 	}, [])
 
-	// let view;
-	// switch (props.mode) {
-	// 	case 'analog':
-	// 		view = <AnalogClockView date={date}/>
-	// 		break;
-	// 	case 'digital' :
-	// 	default:
-	// 		view = <DigitalClockView date={date}/>
-	// }
+	let view;
+	switch (props.mode) {
+		case 'digital':
+			view = <DigitalClockView date={date}/>
+			break;
+		case 'analog' :
+			view = <AnalogClockView  date={date}/>
+			break;
+	}
 
-	return <div> <DigitalClockView date={date}/>
-		<AnalogClockView date={date}/>
+	return <div>  {view}
 	</div>
 }
 

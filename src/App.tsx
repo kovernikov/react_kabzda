@@ -20,7 +20,8 @@ function AppComponent(props: any) {
 
 	return (
 		<div className={'app'}>
-			<Clock/>
+			<Clock mode={'digital'}/>
+			<Clock mode={'analog'}/>
 			<UncontrolledAccordion titleValue={'Menu'}/>
 			<UncontrolledAccordion titleValue={'Users'}/>
 
