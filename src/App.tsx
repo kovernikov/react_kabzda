@@ -7,60 +7,61 @@ import {Accordion} from './components/Accordion/Accordion';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 import {OnOff} from './components/OnOff/OnOff';
 import {Select} from './components/Select/Select';
+import {Clock} from './components/Clock/Clock';
 
 
 function AppComponent(props: any) {
-    console.log('App rendering')
+	console.log('App rendering')
 
-    let [retingValue, setRetingValue] = useState<RatingValueType>(0)
-    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-    let [switchOn, setSwitchOn] = useState<boolean>(false)
-    const [value, setValue] = useState('2')
+	let [retingValue, setRetingValue] = useState<RatingValueType>(0)
+	let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+	let [switchOn, setSwitchOn] = useState<boolean>(false)
+	const [value, setValue] = useState('2')
 
-    return (
-        <div className={'app'}>
+	return (
+		<div className={'app'}>
+			<Clock/>
+			<UncontrolledAccordion titleValue={'Menu'}/>
+			<UncontrolledAccordion titleValue={'Users'}/>
 
-            <UncontrolledAccordion titleValue={'Menu'}/>
-            <UncontrolledAccordion titleValue={'Users'}/>
+			<Select value={value}
+					onChange={setValue}
+					items={[
+						{value: '1', title: 'Minsk'},
+						{value: '2', title: 'Kiev'},
+						{value: '3', title: 'Praha'},
+					]}/>
 
-            <Select value={value}
-                    onChange={setValue}
-                    items={[
-                        {value: '1', title: 'Minsk'},
-                        {value: '2', title: 'Kiev'},
-                        {value: '3', title: 'Praha'},
-                    ]}/>
-
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+			<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+			<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
 
-            <UncontrolledRating/>
-            <UncontrolledRating/>
-            <UncontrolledRating/>
+			<UncontrolledRating/>
+			<UncontrolledRating/>
+			<UncontrolledRating/>
 
-            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={() => {
-                setAccordionCollapsed(!accordionCollapsed)
-            }} items={props.items} onClick={props.onClick}/>
-            <Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {
-                setAccordionCollapsed(!accordionCollapsed)
-            }} items={props.items} onClick={props.onClick}/>
+			<Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={() => {
+				setAccordionCollapsed(!accordionCollapsed)
+			}} items={props.items} onClick={props.onClick}/>
+			<Accordion titleValue={'Users'} collapsed={accordionCollapsed} onChange={() => {
+				setAccordionCollapsed(!accordionCollapsed)
+			}} items={props.items} onClick={props.onClick}/>
 
-            <OnOff on={switchOn} onChange={setSwitchOn}/>
+			<OnOff on={switchOn} onChange={setSwitchOn}/>
 
-            <Rating value={retingValue} onClick={setRetingValue}/>
+			<Rating value={retingValue} onClick={setRetingValue}/>
 
-        </div>
-    );
+		</div>
+	);
 }
 
 type PageTitlePropsType = {
-    title: string
+	title: string
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    console.log('PageTitle rendering')
-    return <h1>{props.title}</h1>
+	console.log('PageTitle rendering')
+	return <h1>{props.title}</h1>
 }
 
 export const App = React.memo(AppComponent)

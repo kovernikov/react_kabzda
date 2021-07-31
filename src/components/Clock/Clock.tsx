@@ -19,17 +19,19 @@ export const Clock: React.FC<PropsType> = (props) => {
 		}
 	}, [])
 
-	let view;
-	switch (props.mode) {
-		case 'analog':
-			view = <AnalogClockView date={date}/>
-			break;
-		case 'digital' :
-		default:
-			view = <DigitalClockView date={date}/>
-	}
+	// let view;
+	// switch (props.mode) {
+	// 	case 'analog':
+	// 		view = <AnalogClockView date={date}/>
+	// 		break;
+	// 	case 'digital' :
+	// 	default:
+	// 		view = <DigitalClockView date={date}/>
+	// }
 
-	return <div> {view} </div>
+	return <div> <DigitalClockView date={date}/>
+		<AnalogClockView date={date}/>
+	</div>
 }
 
 export type ClockViewPropsType = {
