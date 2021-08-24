@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react_kabzda/static/css/main.bbc4d188.chunk.css",
-    "main.js": "/react_kabzda/static/js/main.02a55168.chunk.js",
-    "main.js.map": "/react_kabzda/static/js/main.02a55168.chunk.js.map",
+    "main.js": "/react_kabzda/static/js/main.56639085.chunk.js",
+    "main.js.map": "/react_kabzda/static/js/main.56639085.chunk.js.map",
     "runtime-main.js": "/react_kabzda/static/js/runtime-main.8518316a.js",
     "runtime-main.js.map": "/react_kabzda/static/js/runtime-main.8518316a.js.map",
     "static/js/2.59b5dfb2.chunk.js": "/react_kabzda/static/js/2.59b5dfb2.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8518316a.js",
     "static/js/2.59b5dfb2.chunk.js",
     "static/css/main.bbc4d188.chunk.css",
-    "static/js/main.02a55168.chunk.js"
+    "static/js/main.56639085.chunk.js"
   ]
 }
