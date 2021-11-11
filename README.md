@@ -7,7 +7,7 @@ Hooks
 
 work with API
 
-JEST - testing for reducers
+Jest - testing for reducers
 
 Snapshots testing
 
